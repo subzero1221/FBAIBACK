@@ -16,7 +16,7 @@ const app = express();
 
 const allowedOrigins = [
   "https://fbai-one.vercel.app",
-  "https://fbai-5jvexgfli-subzero1221s-projects.vercel.app",
+  "https://fbai-34o0u1189-subzero1221s-projects.vercel.app",
   "http://localhost:3000",
 ];
 
