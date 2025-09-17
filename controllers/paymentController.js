@@ -87,9 +87,9 @@ exports.handleWebhook = catchAsync(async (req, res, next) => {
 
     const product = session.metadata.product; // "starter", "advanced", "pro"
     const userId = session.metadata.userId;
-
+    lets userTokens = 0;
     try {
-      await sendTokens(product, userId, next);
+      userTokens = await sendTokens(product, userId, next);
       console.log("✅ Tokens added to user:", userId);
     } catch (err) {
       console.error("❌ Error updating user tokens:", err);
@@ -98,8 +98,10 @@ exports.handleWebhook = catchAsync(async (req, res, next) => {
     console.log(`Unhandled event type: ${event.type}`);
   }
 
+  console.log(userTokens)
+  
   // Always respond 200 so Stripe stops sending the event again
-  res.status(200).json({ received: true });
+  res.status(200).json({ received: true, tokens:userTokens });
 });
 
 async function sendTokens(pack, userId, next) {
@@ -114,5 +116,5 @@ async function sendTokens(pack, userId, next) {
   user.tokens = (user.tokens || 0) + tokensPackage[pack]; // if you want to add, not overwrite
   await user.save({ validateBeforeSave: false });
 
-  return true;
+  return user.tokens;
 }
