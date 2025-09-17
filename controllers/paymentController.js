@@ -80,6 +80,7 @@ exports.handleWebhook = catchAsync(async (req, res, next) => {
 
   console.log("Event Type:", event.type);
 
+  let userTokens = 0;
   // Handle different event types
   if (event.type === "checkout.session.completed") {
     const session = event.data.object;
@@ -87,7 +88,7 @@ exports.handleWebhook = catchAsync(async (req, res, next) => {
 
     const product = session.metadata.product; // "starter", "advanced", "pro"
     const userId = session.metadata.userId;
-    lets userTokens = 0;
+    
     try {
       userTokens = await sendTokens(product, userId, next);
       console.log("✅ Tokens added to user:", userId);
