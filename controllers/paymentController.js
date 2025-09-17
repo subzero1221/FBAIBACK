@@ -58,7 +58,7 @@ exports.createPaymentSession = catchAsync(async (req, res, next) => {
     cancel_url: `${process.env.FRONTEND_URL}/payment-cancel`,
   });
 
-  res.status(200).json({ status: "success", url: session.url });
+  res.status(200).json({ status: "success", url: session.url, tokens: req.user.tokens });
 });
 
 exports.handleWebhook = catchAsync(async (req, res, next) => {
