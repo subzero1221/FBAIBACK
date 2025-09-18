@@ -18,9 +18,8 @@ const allowedOrigins = [
   "https://fbai-one.vercel.app",
   "https://fbai-git-main-subzero1221s-projects.vercel.app",
   "http://localhost:3000",
-  "https://fbai-34o0u1189-subzero1221s-projects.vercel.app",
-  "https://fbai-o40vpmtbz-subzero1221s-projects.vercel.app",
-  "https://fbai-53phn9xr9-subzero1221s-projects.vercel.app"
+  "https://fbai-53phn9xr9-subzero1221s-projects.vercel.app",
+  "https://fbai-md2qc3nw9-subzero1221s-projects.vercel.app"
 ];
 
 app.use(
