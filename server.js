@@ -24,7 +24,8 @@ const allowedOrigins = [
   "https://fbai-eouf2l6ta-subzero1221s-projects.vercel.app",
   "https://fbai-fxcha8c9k-subzero1221s-projects.vercel.app",
   "https://fbai-pcse7vdp2-subzero1221s-projects.vercel.app",
-  "https://fbai-huty1x2wj-subzero1221s-projects.vercel.app"
+  "https://fbai-huty1x2wj-subzero1221s-projects.vercel.app",
+  "https://fbai-m29q1097v-subzero1221s-projects.vercel.app"
 ];
 
 app.use(
